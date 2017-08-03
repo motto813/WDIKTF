@@ -23,12 +23,14 @@
       <header id="top-header">
         <h1 id="website-title">WDIKTM</h1>
         <nav id="user-links">
-          <% if logged_in? %>
-            <span><%= current_user.username %> | <%= erb :"sessions/_delete" %></span>
-          <% else %>
-            <span><a href="/sessions/new">login</a> | <a href="/users/new">register</a></span>
-          <% end %>
-            <span> | <a href="/">home</a></span>
+          <div id="nav-container">
+            <% if logged_in? %>
+              <span><%= current_user.username %> | <%= erb :"sessions/_delete" %></span>
+            <% else %>
+              <span><a href="/sessions/new">login</a> | <a href="/users/new">register</a></span>
+            <% end %>
+              <span> | <a href="/">home</a></span>
+          </div>
         </nav>
       </header>
     </div>
