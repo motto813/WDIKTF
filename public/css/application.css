@@ -1,0 +1,78 @@
+body {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#header-container {
+  position: relative;
+  margin: 0 auto;
+  height: 100px;
+  background-color: lightblue;
+}
+
+#top-header {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#website-title {
+  position: relative;
+  top: 30px;
+}
+
+#user-links {
+  position: relative;
+  float: right;
+  bottom: 15px;
+  padding: 5px;
+}
+
+#user-links span {
+  display: inline-block;
+}
+
+.hidden-forms {
+  display: inline-block;
+}
+
+.link-buttons {
+  display: inline-block;
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  color: blue;
+  text-decoration: underline;
+}
+
+#content-container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+.user-forms {
+  position: relative;
+  margin-top: 10px;
+  border: 2px solid gray;
+  padding: 20px;
+}
+
+.user-forms h3 {
+  margin: 0 auto;
+  padding-bottom: 10px;
+  font-size: 1.8em;
+}
+
+.user-forms input, button {
+  display: block;
+  padding: 10px;
+  width: 80%;
+  margin: 0 auto;
+}
+

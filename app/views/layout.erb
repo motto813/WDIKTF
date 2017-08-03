@@ -15,9 +15,26 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>WDIKTM</title>
 </head>
 <body>
-  <%= yield %>
+  <div id="body-container">
+    <div id="header-container">
+      <header id="top-header">
+        <h1 id="website-title">WDIKTM</h1>
+        <nav id="user-links">
+          <% if logged_in? %>
+            <span><%= current_user.username %> | <%= erb :"sessions/_delete" %></span>
+          <% else %>
+            <span><a href="/sessions/new">login</a> | <a href="/users/new">register</a></span>
+          <% end %>
+            <span> | <a href="/">home</a></span>
+        </nav>
+      </header>
+    </div>
+    <div id="content-container">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

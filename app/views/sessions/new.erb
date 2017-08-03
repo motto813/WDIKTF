@@ -1,0 +1,7 @@
+<form class="user-forms" action="/sessions" method="post">
+  <h3>login</h3>
+  <%= erb :"_errors", locals: { errors: @errors } %>
+  <input type="text" name="username" placeholder="username">
+  <input type="password" name="password" placeholder="password">
+  <button type="submit">login</button>
+</form>
