@@ -20,6 +20,8 @@ gem 'bcrypt'
 
 gem 'pry-byebug'
 
+gem 'addressable'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

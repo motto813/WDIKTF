@@ -6,5 +6,9 @@ end
 
 def tmdb_search_maker(media_type, query)
   uri = Adressable::URI.new
-  "/search/#{media_type}?api_key=#{ENV["TMDB_API_KEY"]}&query=
+  uri.query_values = {
+    api_key: ENV["TMDB_API_KEY"],
+    query: query
+  }
+  "#{tmdb_base_url}/search/#{media_type}?#{uri.query}"
 end

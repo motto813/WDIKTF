@@ -1,7 +1,20 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+function searchForActor() {
+  event.preventDefault();
+  console.log("hit the search query");
+  $form = $(this);
+  $.ajax({
+    url: $form.attr("action"),
+    method: $form.attr("method"),
+    data: $form.serialize()
+  })
+  .done(function(response) {
+    console.log(response);
+  })
+  .fail(function(response) {
+    console.log(response.responseText);
+  });
+}
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+$(document).ready(function() {
+  $(".find-actor").on("submit", searchForActor);
 });
