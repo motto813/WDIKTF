@@ -16,9 +16,18 @@ function formSearchQuery() {
   });
 }
 
-// function setBackgroundImages() {
-//   $(".actor-profile").css("background-image", "url(")
-// }
+function setBackgroundImages() {
+  imageUrl = $(".actor-profile").find(".image-url").text();
+  $.ajax({
+    url: "/background_image/" + imageUrl
+  })
+  .done(function(response) {
+    $(".actor-profile").css("background-image", response);
+  })
+  .fail(function(response) {
+    console.log(response.responseText);
+  });
+}
 
 $(document).ready(function() {
   $(".find-actor").on("submit", formSearchQuery);
