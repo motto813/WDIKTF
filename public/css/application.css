@@ -64,3 +64,11 @@ h3 {
   margin: 0 auto;
 }
 
+.actor-profile {
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.actor-profile p {
+  text-align: center;
+}

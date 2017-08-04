@@ -1,6 +1,5 @@
-function searchForActor() {
+function formSearchQuery() {
   event.preventDefault();
-  console.log("hit the search query");
   $form = $(this);
   $.ajax({
     url: $form.attr("action"),
@@ -8,13 +7,19 @@ function searchForActor() {
     data: $form.serialize()
   })
   .done(function(response) {
-    console.log(response);
+    $form.hide();
+    $("#content-container").append(response);
+    setBackgroundImages();
   })
   .fail(function(response) {
     console.log(response.responseText);
   });
 }
 
+// function setBackgroundImages() {
+//   $(".actor-profile").css("background-image", "url(")
+// }
+
 $(document).ready(function() {
-  $(".find-actor").on("submit", searchForActor);
+  $(".find-actor").on("submit", formSearchQuery);
 });

@@ -1,0 +1,8 @@
+<h3>The Usual Suspects</h3>
+
+<% 3.times do |x| %>
+  <div class="actor-profile">
+    <p><%= @cast[x]["name"] %></p>
+    <p><%= @cast[x]["profile_path"] %></p>
+  </div>
+<% end %>

@@ -22,6 +22,8 @@ gem 'pry-byebug'
 
 gem 'addressable'
 
+gem 'themoviedb'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

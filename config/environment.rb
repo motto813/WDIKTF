@@ -24,12 +24,19 @@ require 'erb'
 
 require 'pry-byebug'
 
+require 'addressable'
+
+require 'themoviedb'
+
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 APP_NAME = APP_ROOT.basename.to_s
 
 configure do
+  # Load the dotenv object or something
+  Dotenv.load
+
   # By default, Sinatra assumes that the root is the file that calls the configure block.
   # Since this is not the case for us, we set it manually.
   set :root, APP_ROOT.to_path
@@ -39,6 +46,9 @@ configure do
 
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+
+  # Set the TMDB ruby wrapper API key
+  Tmdb::Api.key(ENV['TMDB_API_KEY'])
 end
 
 # Set up the controllers and helpers
