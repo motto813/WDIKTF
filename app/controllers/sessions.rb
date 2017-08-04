@@ -1,4 +1,5 @@
 get '/sessions/new' do
+  puts ENV["TMDB_V3"]
   erb :"sessions/new"
 end
 
